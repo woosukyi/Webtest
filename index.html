@@ -8,6 +8,7 @@
 </head>
 <body>
     <h2><input type="button" value="hi" onclick="alert('hi')"></h2>
+    <h2><input type="button" id="authBtn" value="checking...">
    
 <script>
   window.fbAsyncInit = function() {
@@ -22,6 +23,12 @@
       var callback = function(response) {
     console.log(response);
     //statusChangeCallback(response);
+    if(response.status==='connected'){
+        document.querySelector('#authBtn').value = 'Logout';
+    }
+    else{
+         document.querySelector('#authBtn').value = 'Login';
+    }
 }
 FB.getLoginStatus(callback);
   };
