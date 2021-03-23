@@ -12,10 +12,10 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '{woosukyi}',
+      appId      : '1538032736393424',
       cookie     : true,
       xfbml      : true,
-      version    : '{V10.0}'
+      version    : 'v10.0'
     });
       
     FB.AppEvents.logPageView();   
@@ -30,10 +30,11 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
     
-    
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
+var callback = function(response) {
+    console.log(response);
+    //statusChangeCallback(response);
+}
+FB.getLoginStatus(callback);
 </script>
 </body>
 </html>
