@@ -37,7 +37,7 @@
     //statusChangeCallback(response);
     if(response.status==='connected'){
         document.querySelector('#authBtn').value = 'Logout';
-                 FB.api('/me','GET',{"fields":"birthday,email,hometown"}, function(resp) {
+                 FB.api('/me', function(resp) {
        document.querySelector('#name').innerHTML = resp.name;
   });
         
