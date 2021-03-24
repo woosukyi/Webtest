@@ -26,20 +26,29 @@
         });
       }
   "><h2>
+        <span id="name"></span>
                
            
    
 <script>
+
+);
      var checkLoginStatus = function(response) {
     console.log(response);
     //statusChangeCallback(response);
     if(response.status==='connected'){
         document.querySelector('#authBtn').value = 'Logout';
-         alert("facebook login success");
+                 FB.api(
+  '/me',
+  'GET',
+  {"fields":"birthday,email,hometown"},
+  function(resp) {
+      document.querySelector('#name').innerHTML = resp.name;
+  };
     }
     else{
          document.querySelector('#authBtn').value = 'Login';
-           alert("facebook logout success");
+         document.querySelector('#name').innerHTML = ' ';
     }
 }
   window.fbAsyncInit = function() {
