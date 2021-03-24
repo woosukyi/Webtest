@@ -29,16 +29,7 @@
                >
    
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1538032736393424',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v10.0'
-    });
-      
-    FB.AppEvents.logPageView();   
-      var callback = function(response) {
+     var callback = function(response) {
     console.log(response);
     //statusChangeCallback(response);
     if(response.status==='connected'){
@@ -48,6 +39,16 @@
          document.querySelector('#authBtn').value = 'Login';
     }
 }
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1538032736393424',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v10.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+   
 FB.getLoginStatus(callback);
   };
 
