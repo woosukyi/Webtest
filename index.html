@@ -38,13 +38,10 @@
     //statusChangeCallback(response);
     if(response.status==='connected'){
         document.querySelector('#authBtn').value = 'Logout';
-                 FB.api(
-  '/me',
-  'GET',
-  {"fields":"birthday,email,hometown"},
-  function(resp) {
-      document.querySelector('#name').innerHTML = resp.name;
-  };
+                 FB.api('/me','GET',{"fields":"birthday,email,hometown"}, function(resp) {
+       document.querySelector('#name').innerHTML = resp.name;
+  });
+        
     }
     else{
          document.querySelector('#authBtn').value = 'Login';
