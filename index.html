@@ -7,8 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>GOOD WILL TRADERS<h1>
     <h2><input type="button" value="hi" onclick="alert('hi')"></h2>
-    <h2><input type="button" id="authBtn" value="checking...">
+    <h2><input type="button" id="authBtn" value="checking..." onclick="
+      if(this.value === 'Login'){
+        // now logout
+        FB.login(function(res){
+          console.log('login =>', res);
+          checkLoginStatus(res);
+        });
+      } else {
+        // now login
+        FB.logout(function(res){
+          console.log('logout =>', res);
+          checkLoginStatus(res);
+        });
+      }
+  ">
+               
+               
+               >
    
 <script>
   window.fbAsyncInit = function() {
